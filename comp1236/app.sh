@@ -9,11 +9,15 @@ read user_selected1
 if [ $user_selected1 == 1 ]
 then
 #Condition for user choose 3 tasks or exit
-echo "Welcome! In this menu you have 4 options, you can press 1 or T to go to function 1. Press 2 or P to go to function 2. And press 3 or Q to go to fucntion 3. Otherwise, if you want to exit press 4 or E"
+echo "Thank you for continue the program"
+echo " "
+echo "Welcome! In this menu you have 4 options.\nYou can press 1 or T to go to task 1.\nPress 2 or P to go to task 2. And press 3 or Q to go to task 3. Otherwise, if you want to exit press 4 or E"
 read user_selected2
 if [ $user_selected2 == 1 ]
 then
 #TASK 1
+echo "Welcome to the task 1. This is the short indoduction about this task 1. The program should find the triangular numbers that are within a range specified by the user and print only the even ones"
+echo "Try to use it!!"
 echo "Minimum number in range: "
 read min
 echo "Your selected minumum number is: $min"
@@ -46,6 +50,8 @@ fi
 if [ $user_selected2 == 2 ]
 then
 #TASK2
+echo "This is the short introduction about task 2. Find all the numbers that can be written as the product of two nonnegative even integers in succession and print them in increasing order"
+echo "Now it is your turn"
 echo "Number amount you want to print:"
 read input
 echo "You selected $input want to print"
@@ -70,6 +76,8 @@ fi
 if [ $user_selected2 == 3 ]
 then
 #TASK3
+echo "This is the short introduction about task 3. Find the terms of a sequence given by the rule Term = an2 + bn + c, where a and b and c are integers specified by the user and n is a positive integer. This task should give the user two options"
+echo "Nonw it is your turn"
 echo "Number of a:"
 read a
 echo "Your a number is: $a"
@@ -89,6 +97,8 @@ echo " "
 
 if [ $n == 1 ];
 then
+echo "In the option 1, The program will find a limited number of terms of the sequence and print them in order"
+echo "Now it is your turn"
 echo "How many term do you want to print: "
 read term1
 echo "You selected $term1 term"
@@ -103,6 +113,8 @@ echo "The number is: $result1"
 done
 
 else
+echo "In the option 2. Find a term in a position chosen by the user and determine whether this term is a factor of a number chosen also by the user"
+echo "Now it is your turn"
 echo "What is your position you want to print: "
 read term2
 echo "You selected $term2 position"
@@ -120,11 +132,13 @@ fi
 #User select to exit from condition2
 if [ $user_selected2 == 4 ]
 then
-echo "See you soon"
+echo "You selected to ext the program"
+echo "See you soon, hope you find this program is interesting."
 exit 1
 fi
 #User select to exit from condition1
 else
-echo "See ya"
+echo "You selected 2 which means exit the program"
+echo "See ya, hope you find this program is interesting."
 exit 1
 fi
