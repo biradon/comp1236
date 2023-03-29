@@ -2,20 +2,24 @@
 echo "Hi, welcome to our program, may I ask, what your name: "
 read name
 echo "Hello $name, it's our honour to have you be here"
+
 #Ask user want to use app or exit
 echo "Do you want to continue using our program or exit, press 1 to continue press 2 to exit"
 read user_selected1
 #Condition after user input
 if [ $user_selected1 == 1 ]
 then
+
 #Condition for user choose 3 tasks or exit
 echo "Thank you for continue the program"
 echo " "
-echo "Welcome! In this menu you have 4 options.\nYou can press 1 or T to go to task 1.\nPress 2 or P to go to task 2. And press 3 or Q to go to task 3. Otherwise, if you want to exit press 4 or E"
+echo "Welcome! In this menu you have 4 options. You can press 1 or T to go to task 1. Press 2 or P to go to task 2. And press 3 or Q to go to task 3. Otherwise, if you want to exit press 4 or E"
 read user_selected2
-if [ $user_selected2 == 1 ]
-then
+
+#Divided into 4 cases
+case "$user_selected2" in
 #TASK 1
+1|t|T)
 echo "Welcome to the task 1. This is the short indoduction about this task 1. The program should find the triangular numbers that are within a range specified by the user and print only the even ones"
 echo "Try to use it!!"
 echo "Minimum number in range: "
@@ -46,10 +50,10 @@ done
 echo "Total even number is: $even_count"
 echo "Totan odd number is: $odd_count"
 exit 1
-fi
-if [ $user_selected2 == 2 ]
-then
-#TASK2
+;;
+
+#TASK 2
+2|p|P)
 echo "This is the short introduction about task 2. Find all the numbers that can be written as the product of two nonnegative even integers in succession and print them in increasing order"
 echo "Now it is your turn"
 echo "Number amount you want to print:"
@@ -72,10 +76,10 @@ echo "$result is not a multiple of $input"
 fi
 done
 exit 1
-fi
-if [ $user_selected2 == 3 ]
-then
-#TASK3
+;;
+
+#TASK 3
+3|q|Q)
 echo "This is the short introduction about task 3. Find the terms of a sequence given by the rule Term = an2 + bn + c, where a and b and c are integers specified by the user and n is a positive integer. This task should give the user two options"
 echo "Nonw it is your turn"
 echo "Number of a:"
@@ -128,14 +132,19 @@ echo "The $term2 term is $result2. This term is not a factor of 682"
 fi
 fi
 exit 1
-fi
-#User select to exit from condition2
-if [ $user_selected2 == 4 ]
-then
-echo "You selected to ext the program"
+;;
+
+#User select to exit the program
+4|e|E)
+echo "You selected to exit the program"
 echo "See you soon, hope you find this program is interesting."
 exit 1
-fi
+;;
+*)
+echo "Invalid selection, please try again"
+;;
+esac
+
 #User select to exit from condition1
 else
 echo "You selected 2 which means exit the program"
