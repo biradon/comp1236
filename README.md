@@ -10,6 +10,7 @@ You application should allow the user to perform these three tasks:
 The program should find the triangular numbers that are within a range specified by the user and print only the even ones. For example, if the user choses to print all the even triangular numbers bigger than 5 but smaller than 100, the program should print 6, 10, 28, 36, 66, 78. The
 program should keep a count of how many triangular numbers were even and how many of them
 were odd within the range given by the user and print this information too.
+
 For information on triangular numbers click here:
 https://plus.maths.org/content/maths-minute-triangular-numbers
 
