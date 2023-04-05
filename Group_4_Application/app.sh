@@ -26,7 +26,7 @@ if [ $user_selected1 == 1 ]
                 read -p "Minimum number in range: " min
                 echo "Your selected minumum number is: $min"
                 echo " "
-                read -p "Maximum number in range: " max
+                read -p  "Maximum number in range: " max
                 echo "Your selected maximum number is: $max"
                 echo " "
                 echo "This is your results: "
@@ -47,7 +47,6 @@ if [ $user_selected1 == 1 ]
                             echo "Even number is: $number"
                             ((even_count++))
                         else
-                            echo "Odd number is: $number"
                             ((odd_count++))
                         fi
                     fi

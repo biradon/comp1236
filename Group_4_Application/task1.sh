@@ -2,12 +2,10 @@
 #TASK 1
 
 #Get user input
-echo "Minimum number in range: "
-read min
+read -p "Minimum number in range: " min
 echo "Your selected minumum number is: $min"
 echo " "
-echo "Maximum number in range: "
-read max
+read -p  "Maximum number in range: " max
 echo "Your selected maximum number is: $max"
 echo " "
 echo "This is your results: "
@@ -28,7 +26,6 @@ do
             echo "Even number is: $number"
             ((even_count++))
         else
-            echo "Odd number is: $number"
             ((odd_count++))
         fi
     fi
