@@ -1,10 +1,12 @@
 #TASK2
 
 #Get user input
-echo "Number amount you want to print:"
-read input
+read -p "Number amount you want to print:" input
 echo "You selected $input want to print"
 echo " "
+read -p "Number you want to check multiple: " multiple
+echo "You selected $multiple is your checking multiple"
+echo "  "
 echo "Your output is go below here"
 echo "  "
 number=0
@@ -15,10 +17,10 @@ do
     number=$((number+2))
     result=$((number*(number+2)))
     #Check multiple of input or not
-    if [ $((result % input)) == 0 ];
+    if [ $((result % multiple)) == 0 ];
     then
-        echo "$result is a multipue of $input"
+        echo "$result is a multipue of $multiple"
     else
-        echo "$result is not a multiple of $input"
+        echo "$result is not a multiple of $multiple"
     fi
 done
