@@ -33,11 +33,27 @@ do
                     echo "The program should find the triangular numbers that are within a range specified by the user and print only the even ones"
                     echo "Try to use it!!"
                     #Get user input
-                    read -p "Minimum number in range: " min
-                    echo "Your selected minumum number is: $min"
-                    echo " "
-                    read -p  "Maximum number in range: " max
-                    echo "Your selected maximum number is: $max"
+                    while true
+                    do
+                        read -p "Minimum number in range: " min
+                        echo "Your selected minumum number is: $min"
+                        echo " "
+                        read -p  "Maximum number in range: " max
+                        echo "Your selected maximum number is: $max"
+                        #Make sure user input number not letter
+                        if ! [[ $min =~ ^[0-9]+$ ]] || ! [[ $max =~ ^[0-9]+$ ]];
+                        then
+                            echo "Please input number for min and max"
+                        else
+                            #Make sure user input min number less than max number
+                            if [ $min -gt $max ];  
+                            then
+                                echo "Please input min number less than max number"
+                            else
+                                break
+                            fi
+                        fi
+                    done
                     echo " "
                     echo "This is your results: "
                     echo " "
@@ -45,23 +61,25 @@ do
                     even_count=0
                     odd_count=0
                     #Loop to calculate number
-                    for((i=$min;number<=max;i++))
+                    for((i=1;number<=max;i++))
                     do
                         number=$((i*(i+1)/2))
-                        #Make sure the number in maximum range
-                        if [ $number -lt $max ];
-                        then
-                            #Check number is even or odd
-                            if [ $((number % 2)) == 0 ];
+                        if [ $number > $min ];
                             then
-                                echo "Even number is: $number"
-                                ((even_count++))
-                            else
-                                ((odd_count++))
+                            #Make sure the number in maximum range
+                            if [ $number -lt $max ];
+                            then
+                                #Check even or odd
+                                if [ $((number % 2)) == 0 ];
+                                then
+                                    echo "Even number is: $number"
+                                    ((even_count++))
+                                else
+                                    ((odd_count++))
+                                fi
                             fi
                         fi
                     done
-                    #Print the even and odd count
                     echo "Total even number is: $even_count"
                     echo "Total odd number is: $odd_count"
                     echo "Thank you for using my program, I will bring back to the menu $name"
