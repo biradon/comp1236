@@ -64,19 +64,15 @@ do
                     for((i=1;number<=max;i++))
                     do
                         number=$((i*(i+1)/2))
-                        if [ $number > $min ];
+                        #Make sure number in range of min and max
+                        if [ $number -gt $min ] && [ $number -le $max ];
+                        then
+                            if [ $((number % 2)) == 0 ];
                             then
-                            #Make sure the number in maximum range
-                            if [ $number -lt $max ];
-                            then
-                                #Check even or odd
-                                if [ $((number % 2)) == 0 ];
-                                then
-                                    echo "Even number is: $number"
-                                    ((even_count++))
-                                else
-                                    ((odd_count++))
-                                fi
+                                echo "Even number is: $number"
+                                ((even_count++))
+                            else
+                                ((odd_count++))
                             fi
                         fi
                     done
